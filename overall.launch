@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch gazebo.launch in a new terminal -->
+    <include file="$(find rtabmap_drone_example)/launch/gazebo.launch" >
+    </include>
+
+    <!-- Launch slamlatest.launch in a new terminal -->
+    <include file="$(find rtabmap_drone_example)/launch/slamlatest.launch" >
+    </include>
+
+    <!-- Launch rviz.launch in a new terminal -->
+    <include file="$(find rtabmap_drone_example)/launch/rviz.launch" >
+    </include>
+
+     <node pkg="tf" type="static_transform_publisher" name="static_transform" output="screen"
+          args="0 0 0 0 0 0 D435_camera_color_optical_frame D435_cameracolor 100"/> 
+</launch>
